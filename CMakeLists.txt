@@ -10,4 +10,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 link_libraries(grpc++_unsecure grpc gpr ${PROTOBUF_LIBRARY})
 
-add_executable(nexus ${SOURCES})`
+add_executable(nexus ${SOURCES})
