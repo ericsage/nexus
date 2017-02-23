@@ -1,7 +1,13 @@
-cmake_minimum_required(VERSION 3.6.2)
+cmake_minimum_required(VERSION 3.2.2)
 project(nexus)
 
-include_directories(include)
-file(GLOB SOURCES "src/*.c")
+find_package(Protobuf REQUIRED)
 
-add_executable(nexus ${SOURCES})
+include_directories(include)
+file(GLOB SOURCES "src/*.cc")
+
+set(CMAKE_CXX_STANDARD 11)
+
+link_libraries(grpc++_unsecure grpc gpr ${PROTOBUF_LIBRARY})
+
+add_executable(nexus ${SOURCES})`
